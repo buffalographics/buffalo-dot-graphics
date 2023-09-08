@@ -1,5 +1,8 @@
 'use client'
-
+import clsx from 'clsx'
+import { MotionConfig, motion, useReducedMotion } from 'framer-motion'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import {
   createContext,
   useContext,
@@ -8,16 +11,12 @@ import {
   useRef,
   useState,
 } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import clsx from 'clsx'
-import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Footer } from '@/components/Footer'
 import { GridPattern } from '@/components/GridPattern'
-import { Logo, Logomark } from '@/components/Logo'
+import { Logo } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
 
@@ -69,9 +68,8 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          {/* <Logomark className="h-8 sm:hidden" invert={invert} filled={true} /> */}
           <Logo
-            className="hidden h-8 sm:block"
+            className="hidden h-12 sm:block"
             invert={invert}
             filled={logoHovered}
           />
@@ -158,6 +156,10 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
   let navRef = useRef<React.ElementRef<'div'>>(null)
   let shouldReduceMotion = useReducedMotion()
 
+  const handleToggle = () => {
+    setExpanded((expanded) => !expanded)
+    window.setTimeout(() => closeRef.current?.focus({ preventScroll: true }))
+  }
   useEffect(() => {
     function onClick(event: MouseEvent) {
       if (
@@ -189,12 +191,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
             icon={MenuIcon}
             toggleRef={openRef}
             expanded={expanded}
-            onToggle={() => {
-              setExpanded((expanded) => !expanded)
-              window.setTimeout(
-                () => closeRef.current?.focus({ preventScroll: true }),
-              )
-            }}
+            onToggle={handleToggle}
           />
         </div>
 
@@ -215,12 +212,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                 icon={XIcon}
                 toggleRef={closeRef}
                 expanded={expanded}
-                onToggle={() => {
-                  setExpanded((expanded) => !expanded)
-                  window.setTimeout(
-                    () => openRef.current?.focus({ preventScroll: true }),
-                  )
-                }}
+                onToggle={handleToggle}
               />
             </div>
             <Navigation />
@@ -229,7 +221,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                      Our office
                     </h2>
                     <Offices
                       invert
