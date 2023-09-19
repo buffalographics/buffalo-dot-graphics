@@ -26,7 +26,7 @@ function Section({
 }) {
   return (
     <Container className="group/section [counter-increment:section]">
-      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
+      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xxl:gap-x-20">
         <div className="flex justify-center">
           <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
             <StylizedImage
@@ -240,7 +240,7 @@ function Values() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Process',
+  title: 'Buffalo Graphics Gallery',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
