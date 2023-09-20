@@ -1,5 +1,4 @@
 import { loadImages } from '@/lib/utils'
-import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -25,7 +24,7 @@ import { chunk } from 'lodash'
 
 export default async function Work() {
   const images = await loadImages()
-  const chunks = chunk(images, 4)
+  const chunks = chunk(images, 3)
   console.log('chunks: ', chunks.length)
   return (
     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
