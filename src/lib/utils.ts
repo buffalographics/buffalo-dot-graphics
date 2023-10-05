@@ -65,15 +65,21 @@ export interface EdBy {
   externalid: string
 }
 
-export const loadImages = async (max: number | undefined) => {
+
+
+export const loadImages = async (
+  dir: string = '*',
+  max?: number | undefined,
+) => {
   // return await cloudinary.api.resources_by_asset_folder('buffalo-graphics')
   const asssets = (await cloudinary.search
     .expression(
-      'folder:buffalo-graphics-img/*', // add your folderå
+      `folder:buffalo-graphics-img/${dir}`, // add your folderå
     )
     .sort_by('public_id', 'desc')
     .max_results(max)
-    .execute()) as Promise<CloudinarySearch>
+    .execute()
+    .catch((err) => console.error(err))) as Promise<CloudinarySearch>
 
   return asssets
 }
