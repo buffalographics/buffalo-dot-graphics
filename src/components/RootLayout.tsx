@@ -19,6 +19,8 @@ import { GridPattern } from '@/components/GridPattern'
 import { Logo } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
+import { capitalize, chunk } from 'lodash'
+import { navLinks } from '@/lib/data'
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
@@ -134,16 +136,20 @@ function NavigationItem({
 }
 
 function Navigation() {
+  const linkChunks = chunk(navLinks, 2)
+  console.log('linkChunks: ', linkChunks)
+
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
-      <NavigationRow>
-        <NavigationItem href="/services">Services</NavigationItem>
-        <NavigationItem href="/order">Order</NavigationItem>
-      </NavigationRow>
-      <NavigationRow>
-        <NavigationItem href="/portfolio">Portfolio</NavigationItem>
-        <NavigationItem href="/contact">Contact</NavigationItem>
-      </NavigationRow>
+      {linkChunks.map((arr, i) => (
+        <NavigationRow key={i}>
+          {arr.map((l) => (
+            <NavigationItem key={l.title} href={l.href}>
+              {capitalize(l.title)}
+            </NavigationItem>
+          ))}
+        </NavigationRow>
+      ))}
     </nav>
   )
 }

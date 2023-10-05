@@ -7,26 +7,16 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
-import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import wipeTruck from '@/images/truck-wipe.webp'
-import { loadCaseStudies } from '@/lib/mdx'
+import { services } from '@/lib/data'
 import { Clients } from '../components/Clients'
-import { CaseStudies } from '../components/CaseStudies'
 
 export const metadata: Metadata = {
   title: {
     template: '%s - BG',
     default: 'Buffalo Graphics',
   },
-  description: `Not Your Grandma's Print Shop.`
+  description: `Not Your Grandma's Print Shop.`,
 }
 
 function Services() {
@@ -66,33 +56,6 @@ function Services() {
   )
 }
 
-const services = [
-  [
-    'Graphic Design Excellence',
-    `Our talented designers will work closely with you to craft stunning visuals that capture your brand's essence and leave a lasting impression. everywhere.`,
-  ],
-  [
-    'Vehicle Graphics',
-    `Transform your vehicles into rolling billboards that grab attention wherever you go. From full wraps to decals, we'll make your message mobile.`,
-  ],
-  [
-    'Custom Shirts',
-    `Create unique, personalized apparel that tells your story. Whether
-  it's for your team, an event, or your brand, we've got you
-  covered.`,
-  ],
-  [
-    'Sign Solutions',
-    `Make your business stand out with eye-catching signs. From storefront signage to banners, we'll help you attract customers and leave a lasting impression.`,
-  ],
-  [
-    'Stickers for Every Occasion',
-    `From fun and quirky to professional and branded, our stickers can be tailored to your needs. They're perfect for promotional giveaways or personal expression.`,
-  ],
-]
-
-
-
 export default async function Home() {
   // let caseStudies = (await loadCaseStudies()).slice(0, 3)
 
@@ -117,11 +80,9 @@ export default async function Home() {
 
       <Clients />
 
-      {/* <CaseStudies caseStudies={caseStudies} /> */}
-
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Phobia', logo: logoPhobiaDark }}
+        client={{ name: 'Anderson See' }}
       >
         Needed vinyl graphics designed, printed, laminated, and cut for a drift
         car. Garrett and Sacha took care of me with great communication and

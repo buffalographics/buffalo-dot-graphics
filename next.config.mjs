@@ -14,6 +14,16 @@ import { unifiedConditional } from 'unified-conditional'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/dotgarrett/**',
+      },
+    ],
+  },
 }
 
 function remarkMDXLayout(source, metaName) {
@@ -40,6 +50,7 @@ function remarkMDXLayout(source, metaName) {
     )
   }
 }
+
 
 export default async function config() {
   let highlighter = await shiki.getHighlighter({

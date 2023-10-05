@@ -20,17 +20,64 @@ cloudinary.config({
   secure: true,
 })
 
-export const loadImages = async () => {
+
+export interface CloudinarySearch {
+  totalCount: number
+  time: number
+  nextCursor: string
+  resources: Resource[]
+  rateLimitAllowed: number
+  rateLimitResetAt: string
+  rateLimitRemaining: number
+}
+
+export interface Resource {
+  assetid: string
+  publicid: string
+  folder: string
+  filename: string
+  format: string
+  version: number
+  resourceType: string
+  type: string
+  createdAt: string
+  uploadedAt: string
+  bytes: number
+  backupBytes: number
+  width: number
+  height: number
+  aspectRatio: number
+  pixels: number
+  pages: number
+  url: string
+  secureurl: string
+  status: string
+  accessMode: string
+  accessControl: null
+  etag: string
+  createdBy: EdBy
+  uploadedBy: EdBy
+}
+
+export interface EdBy {
+  accessKey: string
+  customid: string
+  externalid: string
+}
+
+export const loadImages = async (max: number | undefined) => {
   // return await cloudinary.api.resources_by_asset_folder('buffalo-graphics')
-  const asssets = await cloudinary.search
+  const asssets = (await cloudinary.search
     .expression(
-      'folder:buffalo-graphics/*', // add your folder
+      'folder:buffalo-graphics-img/*', // add your folderå
     )
     .sort_by('public_id', 'desc')
-    .max_results(25)
-    .execute()
+    .max_results(max)
+    .execute()) as Promise<CloudinarySearch>
 
-  // const gal = asssets.map(p)
-
-  return asssets.resources
+  return asssets
 }
+
+// Demo: https://res.cloudinary.com/demo/image/upload/w_300,c_limit,q_auto/turtles.jpg
+
+
