@@ -1,5 +1,4 @@
 import { type Metadata } from 'next'
-
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
@@ -10,13 +9,10 @@ import { Testimonial } from '@/components/Testimonial'
 import wipeTruck from '@/images/truck-wipe.webp'
 import { services } from '@/lib/data'
 import { Clients } from '../components/Clients'
+import { defaultMetaData, testimonials } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s - BG',
-    default: 'Buffalo Graphics',
-  },
-  description: `Not Your Grandma's Print Shop.`,
+  ...defaultMetaData,
 }
 
 function Services() {
@@ -67,27 +63,25 @@ export default async function Home() {
             Not Your Grandma&apos;s Print Shop.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            At Buffalo Graphics, we&#39;re more than just a print company.
-            We&#39;re your creative partner in bringing your ideas to life.
-            Whether you&#39;re looking to make a bold statement with vehicle
-            graphics, promote your brand with eye-catching signs, create custom
-            shirts that stand out, or add a touch of personalization with
-            stickers, our team of experts is here to turn your vision into
-            reality.
+            We only know good printing
           </p>
         </FadeIn>
       </Container>
+
+      {/* <div>
+        <Image src={wipeTruck} />
+      </div> */}
 
       <Clients />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Anderson See' }}
+        client={{
+          name: testimonials.anderson.name,
+          logo: testimonials.anderson.logo,
+        }}
       >
-        Needed vinyl graphics designed, printed, laminated, and cut for a drift
-        car. Garrett and Sacha took care of me with great communication and
-        design collaboration. Turned out absolutely beautiful! Thank you so so
-        much again Buffalo Graphics!
+        {testimonials.anderson.text}
       </Testimonial>
 
       <Services />

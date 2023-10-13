@@ -1,0 +1,2 @@
+vc-domain-verify=www.buffalo.graphics,e8e3fd76b308e59df3f4
+vc-domain-verify=buffalo.graphics,669984d3509aef6ae2e3

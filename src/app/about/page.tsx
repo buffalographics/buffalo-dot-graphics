@@ -10,12 +10,12 @@ import { PageIntro } from '@/components/PageIntro'
 import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
-import imageBlakeReid from '@/images/team/blake-reid.jpg'
-import imageChelseaHagon from '@/images/team/chelsea-hagon.jpg'
-import imageGarrettWeems from '@/images/team/garrett-weems.jpg'
-import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
+import imageBlakeReid from '@/images/team/adrian-melendez.jpg'
+import imgGarrettWeems from '@/images/team/garrett-weems.jpg'
+import imgSachaShannon from '@/images/team/sacha-shannon.jpg'
+import imgWillFanning from '@/images/team/will-fanning.jpg'
 import { loadArticles } from '@/lib/mdx'
-
+import Process from './Process'
 function Culture() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
@@ -55,20 +55,20 @@ const team = [
       {
         name: 'Sacha Shannon',
         role: 'Owner',
-        image: { src: imageChelseaHagon },
+        image: { src: imgSachaShannon },
       },
       {
         name: 'Will Fanning',
         role: 'Operations',
-        image: { src: imageLeonardKrasner },
+        image: { src: imgWillFanning },
       },
       {
         name: 'Garrett Weems',
         role: 'Print Production',
-        image: { src: imageGarrettWeems },
+        image: { src: imgGarrettWeems },
       },
       {
-        name: 'Adrian',
+        name: 'Adrian Melendez',
         role: 'Installer',
         image: { src: imageBlakeReid },
       },
@@ -136,6 +136,7 @@ export default async function About() {
 
   return (
     <>
+      <Process />
       <PageIntro eyebrow="About us" title="Our strength is collaboration">
         <p>
           We believe that our strength lies in our collaborative approach, which

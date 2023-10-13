@@ -2,8 +2,19 @@ import { useId } from 'react'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+/*
+  .cls-1 {
+        fill: #fff;
+      }
 
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
 
+      .cls-2 {
+        fill: #010101;
+      } */
+import logo from '@/app/icon.svg'
 export function Logo({
   className,
   invert = false,
@@ -16,8 +27,57 @@ export function Logo({
   fillOnHover?: boolean
 }) {
   return (
-   <div
-   className='font-display uppercase text-xl font-bold h-full'>Buffalo Graphics</div>
+    <div className="flex">
+      <div className="mr-3">
+        <svg
+          height={35}
+          width={35}
+          id="Layer_1"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 36 36"
+        >
+          <defs></defs>
+          <g>
+            <path
+              className={invert ? 'fill-black' : 'fill-bg'}
+              d="m27.78,11.46c-.21.14-4.17,8.63-5.13,11.48-1.03-.02-9.37,1.34-9.72,5.79-.54.12,0-11.79-.19-11.78v.02s0-.02,0-.02l-.73,4.56c-1.49-.01-5.34.84-8.14,3.14C-1.02,16.81,3.18,5.39,12.04,2.62l4.96,4.52c.25-.14,2.24-1.26,2.43-1.36.26.11,7.64,4.7,8.36,5.68h0Z"
+            />
+            <path
+              strokeWidth={1.63}
+              fill="none"
+              strokeLinejoin="round"
+              className={invert ? 'stroke-white' : 'stroke-black'}
+              d="m27.78,11.46c-.21.14-4.17,8.63-5.13,11.48-1.03-.02-9.37,1.34-9.72,5.79-.54.12,0-11.79-.19-11.78v.02s0-.02,0-.02l-.73,4.56c-1.49-.01-5.34.84-8.14,3.14C-1.02,16.81,3.18,5.39,12.04,2.62l4.96,4.52c.25-.14,2.24-1.26,2.43-1.36.26.11,7.64,4.7,8.36,5.68h0Z"
+            />
+          </g>
+          <g>
+            <path
+              strokeWidth={1.63}
+              strokeLinejoin="round"
+              className={invert ? 'stroke-white' : 'stroke-black'}
+              d="m22.96,5.19c.07-.08.17-.12.27-.12.46.02.31.43.1.69-.33.51-.74.96-1.16,1.4-.44.46-.9.91-1.32,1.38-.42.48-.79.98-1.06,1.56,0,.19.18.32.33.39,1.42.36.57,2.29-.75,2.1-2.48-.08-2.16-2.89-1.13-3.85.82-.91,2.06-1.3,2.99-2.08.61-.45,1.18-.94,1.72-1.46h0Z"
+            />
+            <path
+              className={invert ? 'fill-black' : 'fill-white'}
+              d="m22.96,5.19c.07-.08.17-.12.27-.12.46.02.31.43.1.69-.33.51-.74.96-1.16,1.4-.44.46-.9.91-1.32,1.38-.42.48-.79.98-1.06,1.56,0,.19.18.32.33.39,1.42.36.57,2.29-.75,2.1-2.48-.08-2.16-2.89-1.13-3.85.82-.91,2.06-1.3,2.99-2.08.61-.45,1.18-.94,1.72-1.46h0Z"
+            />
+          </g>
+          <path
+            className={invert ? 'stroke-white' : 'stroke-black'}
+            strokeWidth={2}
+            fill="none"
+            strokeLinejoin="round"
+            d="m16.92.92c-1.78,0-3.5.29-5.1.83C5.48,3.88.92,9.86.92,16.91c0,3.05.85,5.9,2.34,8.33,2.81,4.6,7.88,7.67,13.66,7.67,8.84,0,16-7.16,16-16S25.75.92,16.92.92Z"
+          />
+        </svg>
+      </div>
+      <div className={invert ? 'text-white' : 'text-black'}>
+        <span className="h-full font-display text-xl font-bold uppercase">
+          Buffalo Graphics
+        </span>
+      </div>
+    </div>
   )
 }
 /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" {...props}>

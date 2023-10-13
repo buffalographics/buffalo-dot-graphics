@@ -78,7 +78,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <Button href="/contact" invert={invert}>
-            Contact us
+            Contact
           </Button>
           <button
             ref={toggleRef}
@@ -137,7 +137,6 @@ function NavigationItem({
 
 function Navigation() {
   const linkChunks = chunk(navLinks, 2)
-  console.log('linkChunks: ', linkChunks)
 
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">

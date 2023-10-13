@@ -10,5 +10,6 @@
     "node_modules": true
   },
   "explorerExclude.backup": {},
-  "mdx-preview.preview.mdx.customLayoutFilePath": "@/app/work/wrapper.tsx"
+  "mdx-preview.preview.mdx.customLayoutFilePath": "@/app/work/wrapper.tsx",
+  "svg.preview.background": "transparent"
 }

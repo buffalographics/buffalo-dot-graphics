@@ -23,6 +23,10 @@ export default {
       '7xl': ['4rem', { lineHeight: '4.5rem' }],
     },
     extend: {
+      colors: {
+        bg: '#a8a9ac',
+      },
+
       borderRadius: {
         '4xl': '2.5rem',
       },
@@ -35,5 +39,5 @@ export default {
       },
     },
   },
-  plugins: [flowbite],
+  plugins: [],
 } satisfies Config
