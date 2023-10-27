@@ -86,7 +86,7 @@ export const ContactLinks: FC<{ invert?: boolean }> = ({ invert = false }) => {
               invert ? 'text-neutral-300' : 'text-neutral-600',
             )}
           >
-            <a href={prof.title} className="hover:underline">
+            <a href={prof.href} className="hover:underline">
               <strong>{prof.title}</strong>
             </a>
           </li>

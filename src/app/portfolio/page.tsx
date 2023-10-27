@@ -1,14 +1,6 @@
-// 'use client'
-
-import { galleryPageImages, loadGallerySection } from '@/lib/utils'
-
-import { quality } from '@cloudinary/url-gen/actions/delivery'
-import { auto } from '@cloudinary/url-gen/qualifiers/quality'
-import { accessibility } from '@cloudinary/react'
-import { FC, useEffect, useState } from 'react'
-import GalleryImage from './Gallery'
-import { FadeIn, FadeInStagger } from '@/components/FadeIn'
-import { Container } from '@/components/Container'
+import { loadGallerySection } from '@/lib/utils'
+import { SectionIntro } from '@/components/SectionIntro'
+import GalleryFeature from '../../components/Gallery'
 
 const PorfolioSection = async (props: {
   title: string
@@ -22,35 +14,49 @@ const PorfolioSection = async (props: {
 
   return (
     <div>
-      <h2 className="block font-display text-base font-semibold text-neutral-950">
-        {props.title}
-      </h2>
-      <FadeInStagger faster className="grid grid-cols-4 md:grid-cols-5">
-        {data.resources.map((r) => (
-          <FadeIn key={r.public_id}>
-            <GalleryImage publicId={r.public_id} />
-          </FadeIn>
-        ))}
-      </FadeInStagger>
-      <code>{/* <pre>{JSON.stringify(data, null, 2)}</pre> */}</code>
+      <SectionIntro title={props.title}>
+        <GalleryFeature resources={data.resources} />
+      </SectionIntro>
     </div>
   )
 }
 
+/*
+<div>
+    <h2 className="block font-display text-base font-semibold text-neutral-950">
+      {props.title}
+    </h2>
+    <FadeInStagger faster className="grid grid-cols-4 md:grid-cols-5">
+      {data.resources.map((r) => (
+        <FadeIn key={r.public_id}>
+          <GalleryImage publicId={r.public_id} />
+        </FadeIn>
+      ))}
+    </FadeInStagger>
+    <code>{/* <pre>{JSON.stringify(data, null, 2)}</pre> </code>
+  </div>
+*/
+
+const portfolioSections = [
+  { title: 'Concrete Trucks & Equiptment', tag: 'cte-truck' },
+  { title: 'Legacy Air Heating & Cooling', tag: 'legacy-air-truck' },
+  { title: 'Dream-Mix Volumetric Mixer', tag: 'dream-mix-vm' },
+  { title: 'Rapid Redi-Mix Concrete Mixer', tag: 'rapid-redi-mix-mixer' },
+  { title: 'Charlies Concrete Mixer', tag: 'charlies-concrete-mixer' },
+  { title: 'Raptor Ready Mix Concrete Truck', tag: 'raptor-ready-mix-mixer' },
+]
+
 export default async function Portfolio() {
   return (
-    <Container>
-      <PorfolioSection
-        title="Vehicle Graphics"
-        expression="tags = vehicle-graphics"
-        max={20}
-      />
-      <PorfolioSection title="Mixers" expression="tags = mixer" />
-      <PorfolioSection
-        title="Vehicle Graphics"
-        expression={`folder:buffalo-graphics-img/raptor-ready-mix`}
-      />
-      <code>{/* <pre>{JSON.stringify(idk, null, 2)}</pre> */}</code>
-    </Container>
+    <>
+      {portfolioSections.map((job) => (
+        <PorfolioSection
+          key={job.tag}
+          title={job.title}
+          expression={`tags = ${job.tag}`}
+          max={20}
+        />
+      ))}
+    </>
   )
 }

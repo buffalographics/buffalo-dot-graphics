@@ -15,6 +15,7 @@ const dirs = [
 const ClientImgs = async (props: { dir: string }) => {
   const { resources } = await loadImages(`${props.dir}/*`, 3)
   const name = props.dir.split('-').join(' ')
+
   return (
     <div>
       <h3 className="block font-display text-4xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-5xl">

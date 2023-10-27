@@ -128,6 +128,9 @@ dependencies:
   unified-conditional:
     specifier: 0.0.2
     version: 0.0.2
+  use-carousel-hook:
+    specifier: ^0.2.1
+    version: 0.2.1(@use-effect/did-update@0.0.3)(react@18.2.0)
 
 devDependencies:
   eslint:
@@ -913,6 +916,14 @@ packages:
       '@typescript-eslint/types': 6.7.5
       eslint-visitor-keys: 3.4.3
     dev: true
+
+  /@use-effect/did-update@0.0.3(react@18.2.0):
+    resolution: {integrity: sha512-FAKRuCfR+sz2kXtFzy0nXc4mOacmquAR/qZWYuDTmcJ8vhPCMbM/+mDJTxba9BALxo7gcw4POUHp8PfdCwoemA==}
+    peerDependencies:
+      react: ^16 || ^17.0.0
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@webassemblyjs/ast@1.11.6:
     resolution: {integrity: sha512-IN1xI7PwOvLPgjcf180gC1bqn3q/QaOCwYUahIOhbYUu8KA/3tw2RT/T0Gidi1l7Hhj5D/INhJxiICObqpMu4Q==}
@@ -6094,6 +6105,16 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.3.0
+
+  /use-carousel-hook@0.2.1(@use-effect/did-update@0.0.3)(react@18.2.0):
+    resolution: {integrity: sha512-SYra3IJHd/M9bwcIKBi1bxKCIGhdMGYeOcYNH3C7N8jKle2eI6BKfV5Vszjwcsd9Lq6jcrg+xS4qN7ohM0v1LQ==}
+    peerDependencies:
+      '@use-effect/did-update': ^0.0.3
+      react: ^16 || ^17.0.0
+    dependencies:
+      '@use-effect/did-update': 0.0.3(react@18.2.0)
+      react: 18.2.0
+    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}

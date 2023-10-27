@@ -3,7 +3,22 @@ import { FacebookIcon } from '@/components/icons/FacebookIcon'
 import { type Metadata } from 'next'
 import fiveThreeThree from '@/images/clients/533-racing/logo-color.svg'
 import { Cloudinary } from '@cloudinary/url-gen'
+import logoBrucknersLight from '@/images/partners/bruckners/logo-color.svg'
+import logoCvsWhite from '@/images/partners/cvs/cvs-logo-color.svg'
+import logoNbrWhite from '@/images/partners/nbr-color.svg'
+import logoRushWhite from '@/images/partners/rush/enterprise-color.svg'
+import logoBayLynx from '@/images/bay-lynx-logo-color-black.svg'
+import logoRaptorWhite from '@/images/partners/Raptor_official_logo.svg'
 
+export const clients = [
+  ['Rush Enterprises', logoRushWhite],
+  ["Bruckner's Truck & Equipment", logoBrucknersLight],
+  ['Custom Vehicle Solutions', logoCvsWhite],
+  ["Nelson Brother's Ready Mix", logoNbrWhite],
+  ['Raptor Ready Mix', logoRaptorWhite],
+  ['Bay Lynx', logoBayLynx],
+  // [`BrothersKeepers`,logoBkWhite ],
+]
 export const siteData = {
   fullName: 'Buffalo Graphics Company',
   shortName: 'Buffalo Graphics Co.',
@@ -41,7 +56,7 @@ export const siteData = {
     },
     {
       title: 'Instagram',
-      href: 'https://instagram.com',
+      href: 'https://instagram.com/buffalographicsco',
       icon: InstagramIcon,
     },
   ],
@@ -108,8 +123,8 @@ export const pageLinks: Record<PageLinkName, PageLink> = {
     href: '/contact',
   },
   about: {
-    title: 'about',
-    href: '/about',
+    title: 'services',
+    href: '/services',
   },
   work: {
     title: 'work',
