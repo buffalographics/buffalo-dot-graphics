@@ -12,6 +12,9 @@ import { defaultMetaData, services, testimonials } from '@/lib/data'
 import { type Metadata } from 'next'
 import Image from 'next/image'
 import { Clients } from '../components/Clients'
+
+
+
 export const metadata: Metadata = {
   ...defaultMetaData,
 }
