@@ -51,12 +51,13 @@ export const siteData = {
   socialMedia: [
     {
       title: 'Facebook',
-      user: 'buffalographicsco',
+      user: '@buffalographicsco',
       href: 'https://www.facebook.com/buffalographicsco',
       icon: FacebookIcon,
     },
     {
       title: 'Instagram',
+      user: '@buffalographicsco',
       href: 'https://instagram.com/buffalographicsco',
       icon: InstagramIcon,
     },

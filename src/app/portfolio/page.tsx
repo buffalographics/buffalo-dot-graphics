@@ -1,6 +1,3 @@
-import { loadGallerySection } from '@/lib/utils'
-import { SectionIntro } from '@/components/SectionIntro'
-import GalleryFeature from '../../components/Gallery'
 import Image from 'next/image'
 
 import cteTruck from '@/images/bg-portfolios-2025/cte-truck.jpg'
@@ -114,35 +111,39 @@ const galleryData = [
 
 export default async function Portfolio() {
   return (
-    <FadeInStagger>
-      {galleryData.map((item, index) => (
-        <FadeIn className="relative" key={index}>
-          {Array.isArray(item.image) ? (
-            item.image.map((img, imgIndex) => (
+    <section className='mt-24 sm:mt-32 lg:mt-40'>
+      <FadeInStagger>
+        {galleryData.map((item, index) => (
+          <FadeIn className="relative" key={index}>
+            {Array.isArray(item.image) ? (
+              item.image.map((img, imgIndex) => (
+                <Image
+                  key={imgIndex}
+                  src={img}
+                  alt={item.title}
+                  className="h-auto w-full object-cover"
+                  width={1200}
+                  height={800}
+                  title={item.title}
+      
+                />
+              ))
+            ) : (
               <Image
-                key={imgIndex}
-                src={img}
+                src={item.image}
                 alt={item.title}
-                className="h-auto w-full rounded-lg object-cover mb-4"
+                className="h-auto w-full object-cover"
                 width={1200}
                 height={800}
+      
               />
-            ))
-          ) : (
-            <Image
-              src={item.image}
-              alt={item.title}
-              className="h-auto w-full rounded-lg object-cover mb-4"
-              width={1200}
-              height={800}
-            />
-          )}
-
-          <span className="absolute top-5 left-5 text-3xl font-bold text-white opacity-75">
-            {item.title}
-          </span>
-        </FadeIn>
-      ))}
-    </FadeInStagger>
+            )}
+            {/* <span className="absolute top-5 left-5 text-3xl font-bold text-white opacity-75">
+              {item.title}
+            </span> */}
+          </FadeIn>
+        ))}
+      </FadeInStagger>
+    </section>
   )
 }

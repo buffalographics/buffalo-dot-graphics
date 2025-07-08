@@ -61,7 +61,7 @@ export const ContactLinks: FC<{ invert?: boolean }> = ({ invert = false }) => {
           </Address>
         </li>
         <li className="md:col-start-2 md:row-start-1">
-          <Address name={'Sanger'} invert={invert}>
+          <Address name={'Address'} invert={invert}>
             <a
               href={siteData.address.googleMaps}
               target="_blank"
@@ -77,7 +77,7 @@ export const ContactLinks: FC<{ invert?: boolean }> = ({ invert = false }) => {
         </li>
       </ul>
 
-      <ul className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <ul className="mt-16 grid grid-cols-2 gap-2 sm:grid-cols-2">
         {siteData.socialMedia.map((prof) => (
           <li
             key={prof.title}
@@ -86,8 +86,10 @@ export const ContactLinks: FC<{ invert?: boolean }> = ({ invert = false }) => {
               invert ? 'text-neutral-300' : 'text-neutral-600',
             )}
           >
+            <strong>{prof.title}</strong>
+            <br />
             <a href={prof.href} className="hover:underline">
-              <strong>{prof.title}</strong>
+                {prof.user}
             </a>
           </li>
         ))}
