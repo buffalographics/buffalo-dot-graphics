@@ -8,7 +8,8 @@ import { PageLinks } from '@/components/PageLinks'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StatList, StatListItem } from '@/components/StatList'
 import imageBlakeReid from '@/images/team/adrian-melendez.jpg'
-import imgGarrettWeems from '@/images/team/garrett-weems.png'
+// import imgGarrettWeems from '@/images/team/garrett-weems.png'
+import imgGarrettWeems from '@/images/team/garrett-weems-2.jpg'
 import imgSachaShannon from '@/images/team/sacha-shannon.png'
 import imgWillFanning from '@/images/team/will-fanning.jpg'
 import { loadArticles } from '@/lib/mdx'
@@ -63,14 +64,14 @@ export const team = [
       },
       {
         name: 'Garrett Weems',
-        role: 'Print Production',
+        role: 'Production Manager',
         image: { src: imgGarrettWeems },
       },
-      {
-        name: 'Adrian Melendez',
-        role: 'Installer',
-        image: { src: imageBlakeReid },
-      },
+      // {
+      //   name: 'Adrian Melendez',
+      //   role: 'Installer',
+      //   image: { src: imageBlakeReid },
+      // },
     ],
   },
 ]

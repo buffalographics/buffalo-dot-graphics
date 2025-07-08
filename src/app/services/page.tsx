@@ -9,21 +9,32 @@ import { Team } from '@/components/Team'
 import bottleOpener from '@/images/services/bottle_opener.png'
 import { Metadata } from 'next'
 import Image, { ImageProps } from 'next/image'
+import { services } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Custom Graphic Design, Large Format Printing, and Screen Printed Apparel',
-  keywords: ['Graphic Design', 'Logo', 'screenprinting'],
+    'Custom Graphic Design, Large Format Printing, Vehicle Graphics, Fleet Services, Custom Stickers, and more.',
+  keywords: services.map((s) => s[0]),
 }
 
 export default function Services() {
   return (
     <>
       <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
-        <GraphicDesign />
-        <LargeFormat />
-        <ScreenPrinting />
+        {services.map((s, index) => (
+          // Replace this with your actual component for each service
+          <Section key={s[0]} title={s[0]}>
+            <div className="space-y-6 text-base text-neutral-600">
+              <p>
+                {s[1]}
+              </p>
+            </div>
+
+      
+          </Section>
+        ))}
+
         <Team />
       </div>
 

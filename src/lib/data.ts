@@ -27,8 +27,9 @@ export const siteData = {
     'Graphic Design',
     'Vehicle Graphics',
     'Signage',
-    'Screen Printing',
     'Stickers',
+    'Fleet Graphics',
+    'Color Change Wraps',
   ],
   copywrite: `© Buffalo Graphics Company ${new Date().getFullYear()}`,
   emails: [
@@ -147,7 +148,7 @@ export const socialMediaProfiles = siteData.socialMedia
 
 export const services = [
   [
-    'Graphic Design Excellence',
+    'Graphic Design',
     `Our talented designers work closely with you to craft stunning visuals that capture your brand's essence and leave a lasting impression everywhere.`,
   ],
   [
@@ -155,10 +156,12 @@ export const services = [
     `Transform your vehicles into rolling billboards that grab attention wherever you go. From full wraps to decals, we'll make your message mobile.`,
   ],
   [
-    'Custom Shirts',
-    `Create unique, personalized apparel that tells your story. Whether
-  it's for your team, an event, or your brand, we've got you
-  covered.`,
+    'Fleet Graphics',
+    `Ensure your entire fleet stands out with consistent, high-quality graphics that represent your brand effectively across all vehicles.`,
+  ],
+  [
+    'Color Change Vehicle Wraps',
+    `Want to change the color of your vehicle without a permanent commitment? Our color change wraps offer a fresh look while protecting your original paint.`,
   ],
   [
     'Sign Solutions',

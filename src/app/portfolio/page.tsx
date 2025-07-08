@@ -1,62 +1,148 @@
 import { loadGallerySection } from '@/lib/utils'
 import { SectionIntro } from '@/components/SectionIntro'
 import GalleryFeature from '../../components/Gallery'
+import Image from 'next/image'
 
-const PorfolioSection = async (props: {
-  title: string
-  expression: string
-  max?: number | 3
-}) => {
-  const data = await loadGallerySection({
-    expression: props.expression,
-    max: props.max || 3,
-  })
+import cteTruck from '@/images/bg-portfolios-2025/cte-truck.jpg'
+import cyclonePump from '@/images/bg-portfolios-2025/cyclone-pump.jpg'
+import dashboardRoofing from '@/images/bg-portfolios-2025/dashboard-roofing.jpg'
+import dashboardRoofing2 from '@/images/bg-portfolios-2025/dashboard-roofing-rear.jpg'
+import driftSchool from '@/images/bg-portfolios-2025/drift-school.jpg'
+import legacyAir from '@/images/bg-portfolios-2025/legacy-air.jpg'
+import nbrSilo from '@/images/bg-portfolios-2025/nbr-silo.jpg'
+import peterbuiltTruck from '@/images/bg-portfolios-2025/peterbuilt-truck.jpg'
+import primeBatch from '@/images/bg-portfolios-2025/prime-batch-silo.jpg'
+import rapidMixer from '@/images/bg-portfolios-2025/rapid-mixer.jpg'
+import rapidFleet from '@/images/bg-portfolios-2025/rapid-fleet.jpg'
+import raptorMixer from '@/images/bg-portfolios-2025/raptor-mixer.jpg'
+import raptorFleet from '@/images/bg-portfolios-2025/raptor-fleet.jpg'
+import rushCar from '@/images/bg-portfolios-2025/rush-car.jpg'
+import sunocoMiata from '@/images/bg-portfolios-2025/sunoco-miata.jpg'
+import sunocoRush from '@/images/bg-portfolios-2025/sunoco-rush.jpg'
+import wltTruck from '@/images/bg-portfolios-2025/wlt-truck.jpg'
+import zbPools from '@/images/bg-portfolios-2025/zb-pools.jpg'
+import { FadeIn, FadeInStagger } from '@/components/FadeIn'
 
-  return (
-    <div>
-      <SectionIntro title={props.title}>
-        <GalleryFeature resources={data.resources} />
-      </SectionIntro>
-    </div>
-  )
+export const metadata = {
+  title: 'Portfolio',
+  description:
+    'Explore our portfolio of custom vehicle graphics, wraps, and more.',
+  keywords: ['portfolio', 'vehicle graphics', 'wraps', 'custom designs'],
 }
 
-/*
-<div>
-    <h2 className="block font-display text-base font-semibold text-neutral-950">
-      {props.title}
-    </h2>
-    <FadeInStagger faster className="grid grid-cols-4 md:grid-cols-5">
-      {data.resources.map((r) => (
-        <FadeIn key={r.public_id}>
-          <GalleryImage publicId={r.public_id} />
-        </FadeIn>
-      ))}
-    </FadeInStagger>
-    <code>{/* <pre>{JSON.stringify(data, null, 2)}</pre> </code>
-  </div>
-*/
+const galleryData = [
+  {
+    title: 'Dashboard Roofing',
+    description: 'Custom vehicle graphics for Dashboard Roofing.',
+    image: [dashboardRoofing, dashboardRoofing2],
+  },
+  {
+    title: 'Cyclone Truck',
+    description: 'Custom vehicle graphics for Cyclone Truck.',
+    image: cyclonePump,
+  },
+  {
+    title: 'CTE Truck',
+    description: 'Custom vehicle graphics for CTE Truck.',
+    image: cteTruck,
+  },
+  {
+    title: 'Drift School',
+    description: 'Custom vehicle graphics for Drift School.',
+    image: driftSchool,
+  },
+  {
+    title: 'Legacy Air',
+    description: 'Custom vehicle graphics for Legacy Air.',
+    image: legacyAir,
+  },
+  {
+    title: 'Nbr Silo',
+    description: 'Custom silo graphics for NBR.',
+    image: nbrSilo,
+  },
+  {
+    title: 'Peterbuilt Truck',
+    description: 'Custom vehicle graphics for Peterbuilt Truck.',
+    image: peterbuiltTruck,
+  },
+  {
+    title: 'Prime Batch Silo',
+    description: 'Custom silo graphics for Prime Batch.',
+    image: primeBatch,
+  },
+  {
+    title: 'Rapid Mixer',
+    description: 'Custom mixer graphics for Rapid Mixer.',
+    image: [rapidMixer, rapidFleet],
+  },
 
-const portfolioSections = [
-  { title: 'Concrete Trucks & Equiptment', tag: 'cte-truck' },
-  { title: 'Legacy Air Heating & Cooling', tag: 'legacy-air-truck' },
-  { title: 'Dream-Mix Volumetric Mixer', tag: 'dream-mix-vm' },
-  { title: 'Rapid Redi-Mix Concrete Mixer', tag: 'rapid-redi-mix-mixer' },
-  { title: 'Charlies Concrete Mixer', tag: 'charlies-concrete-mixer' },
-  { title: 'Raptor Ready Mix Concrete Truck', tag: 'raptor-ready-mix-mixer' },
+  {
+    title: 'Raptor Mixer',
+    description: 'Custom mixer graphics for Raptor Mixer.',
+    image: [raptorMixer, raptorFleet],
+  },
+  {
+    title: 'Rush Car',
+    description: 'Custom vehicle graphics for Rush Car.',
+    image: rushCar,
+  },
+  {
+    title: 'Sunoco Miata',
+    description: 'Custom vehicle graphics for Sunoco Miata.',
+    image: sunocoMiata,
+  },
+  {
+    title: 'Sunoco Rush',
+    description:
+      'Custom vehicle graphics for Sunoco Rush, showcasing vibrant designs.',
+    image: sunocoRush,
+  },
+  {
+    title: 'WLT Truck',
+    description:
+      'Custom vehicle graphics for WLT Truck, featuring bold branding and design.',
+    image: wltTruck,
+  },
+  {
+    title: 'ZB Pools',
+    description:
+      'Custom vehicle graphics for ZB Pools, highlighting their services and branding.',
+    image: zbPools,
+  }
 ]
 
 export default async function Portfolio() {
   return (
-    <>
-      {portfolioSections.map((job) => (
-        <PorfolioSection
-          key={job.tag}
-          title={job.title}
-          expression={`tags = ${job.tag}`}
-          max={20}
-        />
+    <FadeInStagger>
+      {galleryData.map((item, index) => (
+        <FadeIn className="relative" key={index}>
+          {Array.isArray(item.image) ? (
+            item.image.map((img, imgIndex) => (
+              <Image
+                key={imgIndex}
+                src={img}
+                alt={item.title}
+                className="h-auto w-full rounded-lg object-cover mb-4"
+                width={1200}
+                height={800}
+              />
+            ))
+          ) : (
+            <Image
+              src={item.image}
+              alt={item.title}
+              className="h-auto w-full rounded-lg object-cover mb-4"
+              width={1200}
+              height={800}
+            />
+          )}
+
+          <span className="absolute top-5 left-5 text-3xl font-bold text-white opacity-75">
+            {item.title}
+          </span>
+        </FadeIn>
       ))}
-    </>
+    </FadeInStagger>
   )
 }
