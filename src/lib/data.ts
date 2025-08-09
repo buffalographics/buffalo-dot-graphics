@@ -104,6 +104,7 @@ export const defaultMetaData: Metadata = {
   openGraph: {
     title: siteData.fullName,
     description: siteData.description,
+    images: ['/opengraph-image.png'],
   },
   manifest: process.env.NODE_ENV === 'production' ? '' : '',
 }
