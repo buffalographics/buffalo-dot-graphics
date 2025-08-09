@@ -19,6 +19,7 @@ import sunocoRush from '@/images/bg-portfolios-2025/sunoco-rush.jpg'
 import wltTruck from '@/images/bg-portfolios-2025/wlt-truck.jpg'
 import zbPools from '@/images/bg-portfolios-2025/zb-pools.jpg'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
+import x3sxs from '@/images/bg-portfolios-2025/x3-sxs.png'
 
 export const metadata = {
   title: 'Portfolio',
@@ -28,6 +29,11 @@ export const metadata = {
 }
 
 const galleryData = [
+  {
+    title: 'Can Am X3 Full Wrap',
+    description: 'SXS Full Wrap',
+    image: x3sxs,
+  },
   {
     title: 'Dashboard Roofing',
     description: 'Custom vehicle graphics for Dashboard Roofing.',
@@ -106,12 +112,12 @@ const galleryData = [
     description:
       'Custom vehicle graphics for ZB Pools, highlighting their services and branding.',
     image: zbPools,
-  }
+  },
 ]
 
 export default async function Portfolio() {
   return (
-    <section className='mt-24 sm:mt-32 lg:mt-40'>
+    <section className="mt-24 sm:mt-32 lg:mt-40">
       <FadeInStagger>
         {galleryData.map((item, index) => (
           <FadeIn className="relative" key={index}>
@@ -125,7 +131,8 @@ export default async function Portfolio() {
                   width={1200}
                   height={800}
                   title={item.title}
-      
+                  loading="lazy"
+                  placeholder="blur"
                 />
               ))
             ) : (
@@ -135,7 +142,8 @@ export default async function Portfolio() {
                 className="h-auto w-full object-cover"
                 width={1200}
                 height={800}
-      
+                loading="lazy"
+                placeholder="blur"
               />
             )}
             {/* <span className="absolute top-5 left-5 text-3xl font-bold text-white opacity-75">
