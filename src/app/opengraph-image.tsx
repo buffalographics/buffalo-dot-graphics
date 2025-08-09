@@ -1,10 +1,11 @@
 import { ImageResponse } from 'next/server'
+import { siteData } from '@/lib/data'
 
 // Route segment config
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = siteData.fullName
 export const size = {
   width: 1200,
   height: 630,
@@ -33,7 +34,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        About Acme
+        {siteData.fullName}
       </div>
     ),
     // ImageResponse options
