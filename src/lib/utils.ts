@@ -1,7 +1,5 @@
 import { Cloudinary } from '@cloudinary/url-gen'
 import { v2 as cloudinary } from 'cloudinary'
-import _ from 'lodash'
-
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -9,11 +7,6 @@ cloudinary.config({
   secure: true,
 })
 
-export interface EdBy {
-  accessKey: string
-  customid: string
-  externalid: string
-}
 type SCParams = {
   expression: string
   sortBy?: string
@@ -45,8 +38,6 @@ export const galleryPageImages = async () => {
       console.error(err)
       return err
     })
-
-  console.log('asssets: ', asssets)
   return asssets
 }
 

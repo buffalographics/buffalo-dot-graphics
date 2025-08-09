@@ -19,9 +19,20 @@ import { Logo } from '@/components/Logo'
 import { Offices } from '@/components/Offices'
 import { SocialMedia } from '@/components/SocialMedia'
 import { navLinks } from '@/lib/data'
-import { capitalize, chunk } from 'lodash'
 import { GridPattern } from './GridPattern'
 import { ContactLinks } from './ContactSection'
+
+function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+function chunk<T>(array: T[], size: number): T[][] {
+  const result: T[][] = []
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size))
+  }
+  return result
+}
 
 const RootLayoutContext = createContext<{
   logoHovered: boolean
