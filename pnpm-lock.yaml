@@ -26,9 +26,6 @@ importers:
       '@next/mdx':
         specifier: 13.5.4
         version: 13.5.4(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0)
-      '@types/lodash':
-        specifier: ^4.14.199
-        version: 4.14.199
       '@types/mdx':
         specifier: ^2.0.8
         version: 2.0.8
@@ -80,9 +77,6 @@ importers:
       fs:
         specifier: 0.0.1-security
         version: 0.0.1-security
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
       next:
         specifier: 13.5.4
         version: 13.5.4(react-dom@18.2.0)(react@18.2.0)
