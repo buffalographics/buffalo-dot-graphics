@@ -39,7 +39,7 @@ export const siteData = {
   phone: '940-205-1922',
   address: {
     street: '1220 Farm to Market 455 W',
-    street_two: 'Suite E1',
+    street_two: 'Suite E8',
     postalCode: '76266',
     state: 'TX',
     city: 'Sanger',
