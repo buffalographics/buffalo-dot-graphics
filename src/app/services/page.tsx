@@ -14,7 +14,7 @@ import { services } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'Custom Graphic Design, Large Format Printing, Vehicle Graphics, Fleet Services, Custom Stickers, and more.',
+    'Commercial Fleet Graphics, Vehicle Graphics, Custom Graphic Design, Large Format Printing, Custom Stickers, and more.',
   keywords: services.map((s) => s[0]),
 }
 

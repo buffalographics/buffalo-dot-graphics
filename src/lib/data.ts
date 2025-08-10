@@ -22,13 +22,14 @@ export const clients = [
 export const siteData = {
   fullName: 'Buffalo Graphics Company',
   shortName: 'Buffalo Graphics Co.',
-  description: `Not Your Grandma's Print Shop`,
+  description: `Commercial fleet graphics that drive your brand forward`,
   keywords: [
-    'Graphic Design',
+    'Commercial Fleet Graphics',
+    'Fleet Graphics',
     'Vehicle Graphics',
+    'Graphic Design',
     'Signage',
     'Stickers',
-    'Fleet Graphics',
     'Color Change Wraps',
   ],
   copywrite: `© Buffalo Graphics Company ${new Date().getFullYear()}`,
@@ -150,16 +151,16 @@ export const socialMediaProfiles = siteData.socialMedia
 
 export const services = [
   [
-    'Graphic Design',
-    `Our talented designers work closely with you to craft stunning visuals that capture your brand's essence and leave a lasting impression everywhere.`,
+    'Commercial Fleet Graphics',
+    `Fleet, service, and work vehicles are our specialty. We design, produce, and install graphics that keep your brand consistent across your entire fleet.`,
   ],
   [
     'Vehicle Graphics',
     `Transform your vehicles into rolling billboards that grab attention wherever you go. From full wraps to decals, we'll make your message mobile.`,
   ],
   [
-    'Fleet Graphics',
-    `Ensure your entire fleet stands out with consistent, high-quality graphics that represent your brand effectively across all vehicles.`,
+    'Graphic Design',
+    `Our talented designers work closely with you to craft stunning visuals that capture your brand's essence and leave a lasting impression everywhere.`,
   ],
   [
     'Color Change Vehicle Wraps',
