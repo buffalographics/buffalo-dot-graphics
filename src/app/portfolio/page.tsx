@@ -24,8 +24,8 @@ import x3sxs from '@/images/bg-portfolios-2025/x3-sxs.png'
 export const metadata = {
   title: 'Portfolio',
   description:
-    'Explore our portfolio of custom vehicle graphics, wraps, and more.',
-  keywords: ['portfolio', 'vehicle graphics', 'wraps', 'custom designs'],
+    'Explore our portfolio of commercial fleet graphics, vehicle wraps, and more.',
+  keywords: ['portfolio', 'commercial fleet graphics', 'vehicle graphics', 'wraps', 'custom designs'],
 }
 
 const galleryData = [

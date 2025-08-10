@@ -81,11 +81,10 @@ export default async function Home() {
       <Container className="mt-24 sm:mt-32 md:mt-56">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-neutral-950 [text-wrap:balance] sm:text-7xl">
-            Not Your Grandma&apos;s Print Shop.
+            Commercial Fleet Graphics That Turn Heads
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-            If you&apos;re looking for poor quality and stock clipart, we might
-            not be a great fit
+            From design to installation, we keep your business looking sharp on the road.
           </p>
         </FadeIn>
       </Container>
